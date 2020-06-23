@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //Angularfire
- 
+import '@angular/compiler';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -24,6 +25,7 @@ import { AuthService } from './services/auth.service';
 import { ChatService } from './services/chat.service';
 import { environment } from 'src/environments/environment';
 
+
 // import { appRoutes } from '../routes';
 
 
@@ -39,21 +41,23 @@ import { environment } from 'src/environments/environment';
     NavbarComponent,
     UserListComponent,
     UserItemComponent,
+  
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
-     FormsModule,
+    FormsModule,
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-   
-   
-    AngularFireModule.initializeApp(environment.firebase),
-  ],
+    AngularFireStorageModule,
+      
+  AngularFireModule.initializeApp(environment.firebase),
+  
+],
   providers: [AuthService, ChatService],
   bootstrap: [AppComponent]
 })

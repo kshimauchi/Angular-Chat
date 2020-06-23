@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  firebase: {
-
+  firebase:{
+    
   }
-};
+  };
 
 /*
  * For easier debugging in development mode, you can import the following file
